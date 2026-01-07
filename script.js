@@ -49,53 +49,44 @@ const contactForm = document.getElementById('contactForm');
 const formMessage = document.getElementById('formMessage');
 
 if (contactForm) {
-    contactForm.addEventListener('submit', async (e) => {
+    contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
         
         // Get form data
         const formData = new FormData(contactForm);
-        const data = Object.fromEntries(formData);
+        const name = formData.get('name') || '';
+        const email = formData.get('email') || '';
+        const company = formData.get('company') || '';
+        const industry = formData.get('industry') || '';
+        const message = formData.get('message') || '';
         
-        // Show loading state
-        const submitButton = contactForm.querySelector('button[type="submit"]');
-        const originalButtonText = submitButton.textContent;
-        submitButton.textContent = 'Sending...';
-        submitButton.disabled = true;
+        // Construct email body
+        let emailBody = `Name: ${name}\n`;
+        emailBody += `Email: ${email}\n`;
+        if (company) emailBody += `Company: ${company}\n`;
+        if (industry) emailBody += `Industry: ${industry}\n`;
+        emailBody += `\nMessage:\n${message}`;
         
-        try {
-            // Note: Replace 'YOUR_FORM_ID' in HTML with actual Formspree form ID
-            // For now, we'll simulate form submission
-            const response = await fetch(contactForm.action, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json'
-                },
-                body: JSON.stringify(data)
-            });
-            
-            if (response.ok) {
-                formMessage.textContent = 'Thank you! Your message has been sent successfully. We will get back to you soon.';
-                formMessage.className = 'form-message success';
-                contactForm.reset();
-            } else {
-                throw new Error('Form submission failed');
-            }
-        } catch (error) {
-            // Fallback: Show success message even if Formspree isn't configured
-            // In production, you would handle this error properly
-            formMessage.textContent = 'Thank you! Your message has been received. (Note: Please configure Formspree form ID in HTML for actual email delivery)';
-            formMessage.className = 'form-message success';
+        // Encode the email body
+        const encodedBody = encodeURIComponent(emailBody);
+        const subject = encodeURIComponent('Inquiry from Blue Sail Solutions Website');
+        
+        // Create mailto link with both email addresses
+        const mailtoLink = `mailto:aramudhin@gmail.com,kishanguptab@gmail.com?subject=${subject}&body=${encodedBody}`;
+        
+        // Open email client
+        window.location.href = mailtoLink;
+        
+        // Show success message
+        formMessage.textContent = 'Your email client is opening. Please send the email to complete your inquiry.';
+        formMessage.className = 'form-message success';
+        formMessage.style.display = 'block';
+        
+        // Reset form after a delay
+        setTimeout(() => {
             contactForm.reset();
-        } finally {
-            submitButton.textContent = originalButtonText;
-            submitButton.disabled = false;
-            
-            // Hide message after 5 seconds
-            setTimeout(() => {
-                formMessage.style.display = 'none';
-            }, 5000);
-        }
+            formMessage.style.display = 'none';
+        }, 10000);
     });
 }
 

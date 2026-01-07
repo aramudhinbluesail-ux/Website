@@ -406,17 +406,13 @@ section {
     align-items: center;
 }
 
-.profile-placeholder {
-    width: 250px;
-    height: 250px;
-    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+.profile-image {
+    width: 300px;
+    height: 300px;
     border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-weight: 500;
+    object-fit: cover;
     box-shadow: var(--shadow-lg);
+    border: 4px solid var(--bg-white);
 }
 
 /* Contact Section */
@@ -445,11 +441,14 @@ section {
 
 .contact-item p {
     color: var(--text-light);
+    line-height: 1.8;
 }
 
 .contact-item a {
     color: var(--primary-color);
     text-decoration: none;
+    display: inline-block;
+    margin: 0.25rem 0;
 }
 
 .contact-item a:hover {
@@ -612,6 +611,11 @@ section {
         grid-template-columns: 1fr;
     }
 
+    .profile-image {
+        width: 250px;
+        height: 250px;
+    }
+
     .hero-buttons {
         flex-direction: column;
         align-items: center;
@@ -646,6 +650,11 @@ section {
 
     .footer-logo {
         max-width: 120px;
+    }
+
+    .profile-image {
+        width: 200px;
+        height: 200px;
     }
 
     .container {
