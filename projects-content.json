@@ -1,0 +1,265 @@
+{
+  "projects": [
+    {
+      "id": "supply-chain-optimization",
+      "category": "Pharmaceutical",
+      "title": "Supply Chain Optimization",
+      "shortDescription": "Reduced operational costs by 25% and improved delivery times by 30% for a major pharmaceutical company through advanced supply chain analytics and optimization models.",
+      "client": "[Client Name - To be updated]",
+      "duration": "[Project Duration - To be updated]",
+      "overview": "[Project Overview - Detailed description to be added from Word document]",
+      "challenge": "[Challenge Description - To be added from Word document]",
+      "solution": "[Solution Description - To be added from Word document]",
+      "results": [
+        "25% cost reduction",
+        "30% faster delivery",
+        "Improved inventory management"
+      ],
+      "images": [
+        {
+          "type": "main",
+          "url": "projects/supply-chain-optimization/main.jpg",
+          "alt": "Supply Chain Optimization Overview",
+          "caption": "[Image caption - To be updated]"
+        },
+        {
+          "type": "diagram",
+          "url": "projects/supply-chain-optimization/diagram.jpg",
+          "alt": "Supply Chain Process Diagram",
+          "caption": "[Diagram caption - To be updated]"
+        },
+        {
+          "type": "graph",
+          "url": "projects/supply-chain-optimization/results-graph.jpg",
+          "alt": "Results and Metrics Graph",
+          "caption": "[Graph caption - To be updated]"
+        }
+      ],
+      "blockDiagrams": [
+        {
+          "title": "[Diagram Title - To be updated]",
+          "url": "projects/supply-chain-optimization/block-diagram-1.jpg",
+          "alt": "Block Diagram 1",
+          "description": "[Diagram description - To be updated]"
+        }
+      ],
+      "graphs": [
+        {
+          "title": "[Graph Title - To be updated]",
+          "url": "projects/supply-chain-optimization/graph-1.jpg",
+          "alt": "Graph 1",
+          "description": "[Graph description - To be updated]"
+        }
+      ],
+      "keyMetrics": [
+        {
+          "metric": "Cost Reduction",
+          "value": "25%",
+          "description": "[Description - To be updated]"
+        },
+        {
+          "metric": "Delivery Time Improvement",
+          "value": "30%",
+          "description": "[Description - To be updated]"
+        }
+      ],
+      "technologies": ["[Technology 1]", "[Technology 2]", "[Technology 3]"]
+    },
+    {
+      "id": "hospital-resource-allocation",
+      "category": "Healthcare",
+      "title": "Hospital Resource Allocation",
+      "shortDescription": "Optimized patient flow and resource allocation for a large hospital network, resulting in reduced wait times and improved patient satisfaction scores.",
+      "client": "[Client Name - To be updated]",
+      "duration": "[Project Duration - To be updated]",
+      "overview": "[Project Overview - Detailed description to be added from Word document]",
+      "challenge": "[Challenge Description - To be added from Word document]",
+      "solution": "[Solution Description - To be added from Word document]",
+      "results": [
+        "40% reduction in wait times",
+        "15% increase in patient satisfaction",
+        "Better resource utilization"
+      ],
+      "images": [
+        {
+          "type": "main",
+          "url": "projects/hospital-resource-allocation/main.jpg",
+          "alt": "Hospital Resource Allocation Overview",
+          "caption": "[Image caption - To be updated]"
+        },
+        {
+          "type": "diagram",
+          "url": "projects/hospital-resource-allocation/diagram.jpg",
+          "alt": "Resource Allocation Process Diagram",
+          "caption": "[Diagram caption - To be updated]"
+        },
+        {
+          "type": "graph",
+          "url": "projects/hospital-resource-allocation/results-graph.jpg",
+          "alt": "Results and Metrics Graph",
+          "caption": "[Graph caption - To be updated]"
+        }
+      ],
+      "blockDiagrams": [
+        {
+          "title": "[Diagram Title - To be updated]",
+          "url": "projects/hospital-resource-allocation/block-diagram-1.jpg",
+          "alt": "Block Diagram 1",
+          "description": "[Diagram description - To be updated]"
+        }
+      ],
+      "graphs": [
+        {
+          "title": "[Graph Title - To be updated]",
+          "url": "projects/hospital-resource-allocation/graph-1.jpg",
+          "alt": "Graph 1",
+          "description": "[Graph description - To be updated]"
+        }
+      ],
+      "keyMetrics": [
+        {
+          "metric": "Wait Time Reduction",
+          "value": "40%",
+          "description": "[Description - To be updated]"
+        },
+        {
+          "metric": "Patient Satisfaction Increase",
+          "value": "15%",
+          "description": "[Description - To be updated]"
+        }
+      ],
+      "technologies": ["[Technology 1]", "[Technology 2]", "[Technology 3]"]
+    },
+    {
+      "id": "risk-management-system",
+      "category": "Finance",
+      "title": "Risk Management System",
+      "shortDescription": "Developed comprehensive risk assessment and management framework for a financial institution, enhancing regulatory compliance and decision-making processes.",
+      "client": "[Client Name - To be updated]",
+      "duration": "[Project Duration - To be updated]",
+      "overview": "[Project Overview - Detailed description to be added from Word document]",
+      "challenge": "[Challenge Description - To be added from Word document]",
+      "solution": "[Solution Description - To be added from Word document]",
+      "results": [
+        "Improved risk visibility",
+        "Enhanced compliance",
+        "Data-driven decision making"
+      ],
+      "images": [
+        {
+          "type": "main",
+          "url": "projects/risk-management-system/main.jpg",
+          "alt": "Risk Management System Overview",
+          "caption": "[Image caption - To be updated]"
+        },
+        {
+          "type": "diagram",
+          "url": "projects/risk-management-system/diagram.jpg",
+          "alt": "Risk Management Process Diagram",
+          "caption": "[Diagram caption - To be updated]"
+        },
+        {
+          "type": "graph",
+          "url": "projects/risk-management-system/results-graph.jpg",
+          "alt": "Results and Metrics Graph",
+          "caption": "[Graph caption - To be updated]"
+        }
+      ],
+      "blockDiagrams": [
+        {
+          "title": "[Diagram Title - To be updated]",
+          "url": "projects/risk-management-system/block-diagram-1.jpg",
+          "alt": "Block Diagram 1",
+          "description": "[Diagram description - To be updated]"
+        }
+      ],
+      "graphs": [
+        {
+          "title": "[Graph Title - To be updated]",
+          "url": "projects/risk-management-system/graph-1.jpg",
+          "alt": "Graph 1",
+          "description": "[Graph description - To be updated]"
+        }
+      ],
+      "keyMetrics": [
+        {
+          "metric": "Risk Visibility",
+          "value": "Improved",
+          "description": "[Description - To be updated]"
+        },
+        {
+          "metric": "Compliance Enhancement",
+          "value": "Enhanced",
+          "description": "[Description - To be updated]"
+        }
+      ],
+      "technologies": ["[Technology 1]", "[Technology 2]", "[Technology 3]"]
+    },
+    {
+      "id": "clinical-trial-optimization",
+      "category": "Pharmaceutical",
+      "title": "Clinical Trial Optimization",
+      "shortDescription": "Streamlined clinical trial processes through predictive analytics, reducing trial duration and costs while maintaining regulatory standards.",
+      "client": "[Client Name - To be updated]",
+      "duration": "[Project Duration - To be updated]",
+      "overview": "[Project Overview - Detailed description to be added from Word document]",
+      "challenge": "[Challenge Description - To be added from Word document]",
+      "solution": "[Solution Description - To be added from Word document]",
+      "results": [
+        "20% reduction in trial duration",
+        "Cost savings of $2M+",
+        "Maintained quality standards"
+      ],
+      "images": [
+        {
+          "type": "main",
+          "url": "projects/clinical-trial-optimization/main.jpg",
+          "alt": "Clinical Trial Optimization Overview",
+          "caption": "[Image caption - To be updated]"
+        },
+        {
+          "type": "diagram",
+          "url": "projects/clinical-trial-optimization/diagram.jpg",
+          "alt": "Clinical Trial Process Diagram",
+          "caption": "[Diagram caption - To be updated]"
+        },
+        {
+          "type": "graph",
+          "url": "projects/clinical-trial-optimization/results-graph.jpg",
+          "alt": "Results and Metrics Graph",
+          "caption": "[Graph caption - To be updated]"
+        }
+      ],
+      "blockDiagrams": [
+        {
+          "title": "[Diagram Title - To be updated]",
+          "url": "projects/clinical-trial-optimization/block-diagram-1.jpg",
+          "alt": "Block Diagram 1",
+          "description": "[Diagram description - To be updated]"
+        }
+      ],
+      "graphs": [
+        {
+          "title": "[Graph Title - To be updated]",
+          "url": "projects/clinical-trial-optimization/graph-1.jpg",
+          "alt": "Graph 1",
+          "description": "[Graph description - To be updated]"
+        }
+      ],
+      "keyMetrics": [
+        {
+          "metric": "Trial Duration Reduction",
+          "value": "20%",
+          "description": "[Description - To be updated]"
+        },
+        {
+          "metric": "Cost Savings",
+          "value": "$2M+",
+          "description": "[Description - To be updated]"
+        }
+      ],
+      "technologies": ["[Technology 1]", "[Technology 2]", "[Technology 3]"]
+    }
+  ]
+}
+

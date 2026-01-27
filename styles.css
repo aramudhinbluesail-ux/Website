@@ -302,6 +302,10 @@ section {
     box-shadow: var(--shadow-md);
     border-left: 4px solid var(--primary-color);
     transition: var(--transition);
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    cursor: pointer;
 }
 
 .project-card:hover {
