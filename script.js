@@ -44,12 +44,88 @@ window.addEventListener('scroll', () => {
     lastScroll = currentScroll;
 });
 
-// Form Handling
+// Service Modal Handling
+let servicesData = {};
+const serviceModal = document.getElementById('serviceModal');
+const serviceModalBody = document.getElementById('serviceModalBody');
+const serviceModalClose = document.querySelector('.service-modal-close');
+
+// Load services content from JSON file
+async function loadServicesContent() {
+    try {
+        const response = await fetch('services-content.json');
+        servicesData = await response.json();
+    } catch (error) {
+        console.error('Error loading services content:', error);
+        // Fallback: create basic content structure
+        servicesData = {};
+    }
+}
+
+// Email configuration - using FormSubmit (free, no signup required)
+// Alternative: You can use EmailJS, Formspree, or any other email service
+
+// Service Card Click Handler
+document.addEventListener('DOMContentLoaded', () => {
+    loadServicesContent();
+    
+    const serviceCards = document.querySelectorAll('.service-card');
+    serviceCards.forEach(card => {
+        card.addEventListener('click', () => {
+            const serviceId = card.getAttribute('data-service');
+            if (serviceId && servicesData[serviceId]) {
+                showServiceModal(servicesData[serviceId]);
+            } else {
+                // Fallback: show basic info
+                const title = card.querySelector('h3').textContent;
+                const description = card.querySelector('p').textContent;
+                showServiceModal({
+                    title: title,
+                    fullContent: `<h2>${title}</h2><p>${description}</p><p><em>Detailed content will be available after updating the services-content.json file.</em></p>`
+                });
+            }
+        });
+    });
+});
+
+// Show Service Modal
+function showServiceModal(service) {
+    serviceModalBody.innerHTML = service.fullContent || `<h2>${service.title}</h2><p>${service.shortDescription}</p>`;
+    serviceModal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+// Close Service Modal
+if (serviceModalClose) {
+    serviceModalClose.addEventListener('click', () => {
+        closeServiceModal();
+    });
+}
+
+serviceModal.addEventListener('click', (e) => {
+    if (e.target === serviceModal) {
+        closeServiceModal();
+    }
+});
+
+function closeServiceModal() {
+    serviceModal.classList.remove('active');
+    document.body.style.overflow = 'auto';
+}
+
+// Close modal on Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && serviceModal.classList.contains('active')) {
+        closeServiceModal();
+    }
+});
+
+// Form Handling with FormSubmit (free email service)
 const contactForm = document.getElementById('contactForm');
 const formMessage = document.getElementById('formMessage');
 
 if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
+    contactForm.addEventListener('submit', async (e) => {
         e.preventDefault();
         
         // Get form data
@@ -60,33 +136,67 @@ if (contactForm) {
         const industry = formData.get('industry') || '';
         const message = formData.get('message') || '';
         
-        // Construct email body
-        let emailBody = `Name: ${name}\n`;
-        emailBody += `Email: ${email}\n`;
-        if (company) emailBody += `Company: ${company}\n`;
-        if (industry) emailBody += `Industry: ${industry}\n`;
-        emailBody += `\nMessage:\n${message}`;
+        // Show loading state
+        const submitButton = contactForm.querySelector('button[type="submit"]');
+        const originalButtonText = submitButton.textContent;
+        submitButton.textContent = 'Sending...';
+        submitButton.disabled = true;
+        formMessage.style.display = 'none';
         
-        // Encode the email body
-        const encodedBody = encodeURIComponent(emailBody);
-        const subject = encodeURIComponent('Inquiry from Blue Sail Solutions Website');
-        
-        // Create mailto link with both email addresses
-        const mailtoLink = `mailto:aramudhin@gmail.com,kishanguptab@gmail.com?subject=${subject}&body=${encodedBody}`;
-        
-        // Open email client
-        window.location.href = mailtoLink;
-        
-        // Show success message
-        formMessage.textContent = 'Your email client is opening. Please send the email to complete your inquiry.';
-        formMessage.className = 'form-message success';
-        formMessage.style.display = 'block';
-        
-        // Reset form after a delay
-        setTimeout(() => {
-            contactForm.reset();
-            formMessage.style.display = 'none';
-        }, 10000);
+        try {
+            // Using FormSubmit - free service that sends emails directly
+            // No signup required, works immediately
+            const formSubmitURL = 'https://formsubmit.co/ajax/aramudhin@gmail.com';
+            
+            // Prepare email data
+            const emailData = {
+                name: name,
+                email: email,
+                company: company || 'Not provided',
+                industry: industry || 'Not provided',
+                message: message,
+                _subject: 'Inquiry from Blue Sail Solutions Website',
+                _captcha: false, // Disable captcha for better UX
+                _template: 'table' // Use table template for better formatting
+            };
+            
+            // Send email using FormSubmit
+            const response = await fetch(formSubmitURL, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify(emailData)
+            });
+            
+            if (response.ok) {
+                // Show success message
+                formMessage.textContent = 'Thank you! Your inquiry has been sent successfully. We will get back to you soon.';
+                formMessage.className = 'form-message success';
+                formMessage.style.display = 'block';
+                
+                // Reset form
+                contactForm.reset();
+            } else {
+                throw new Error('Failed to send email');
+            }
+        } catch (error) {
+            console.error('Error sending email:', error);
+            
+            // Fallback: Try alternative method or show error
+            formMessage.textContent = 'Sorry, there was an error sending your message. Please try again or contact us directly at aramudhin@gmail.com';
+            formMessage.className = 'form-message error';
+            formMessage.style.display = 'block';
+        } finally {
+            submitButton.textContent = originalButtonText;
+            submitButton.disabled = false;
+            
+            // Hide message after 10 seconds
+            setTimeout(() => {
+                formMessage.style.display = 'none';
+            }, 10000);
+        }
     });
 }
 

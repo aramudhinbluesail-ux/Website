@@ -59,7 +59,7 @@ body {
 }
 
 .logo-img {
-    height: 40px;
+    height: 60px;
     width: auto;
     object-fit: contain;
 }
@@ -263,6 +263,7 @@ section {
     box-shadow: var(--shadow-md);
     transition: var(--transition);
     text-align: center;
+    cursor: pointer;
 }
 
 .service-card:hover {
@@ -574,7 +575,7 @@ section {
     }
 
     .logo-img {
-        height: 30px;
+        height: 45px;
     }
 
     .nav-brand h2 {
@@ -627,9 +628,108 @@ section {
     }
 }
 
+/* Service Modal */
+.service-modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    animation: fadeIn 0.3s;
+}
+
+.service-modal.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.service-modal-content {
+    background-color: var(--bg-white);
+    margin: auto;
+    padding: 2rem;
+    border-radius: 10px;
+    max-width: 800px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: var(--shadow-lg);
+    animation: slideUp 0.3s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.service-modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    color: var(--text-light);
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.service-modal-close:hover {
+    color: var(--text-dark);
+}
+
+#serviceModalBody {
+    padding-top: 1rem;
+}
+
+#serviceModalBody h2 {
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+#serviceModalBody h3 {
+    color: var(--text-dark);
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+}
+
+#serviceModalBody p {
+    color: var(--text-light);
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+#serviceModalBody ul {
+    color: var(--text-light);
+    line-height: 1.8;
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+#serviceModalBody li {
+    margin-bottom: 0.5rem;
+}
+
 @media (max-width: 480px) {
     .logo-img {
-        height: 25px;
+        height: 40px;
     }
 
     .nav-brand h2 {

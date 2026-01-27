@@ -16,7 +16,6 @@
         <div class="container">
             <div class="nav-brand">
                 <img src="BlueSailSolutions.png" alt="Blue Sail Solutions Logo" class="logo-img">
-                <h2>Blue Sail Solutions</h2>
             </div>
             <ul class="nav-menu" id="navMenu">
                 <li><a href="#home" class="nav-link">Home</a></li>
@@ -37,7 +36,6 @@
     <section id="home" class="hero">
         <div class="container">
             <div class="hero-content">
-                <img src="BlueSailSolutions.png" alt="Blue Sail Solutions Logo" class="hero-logo">
                 <h1 class="hero-title">Blue Sail Solutions</h1>
                 <p class="hero-subtitle">Operations Optimization & Data Analytics</p>
                 <p class="hero-description">Transforming Business Performance Through Advanced Analytics and Optimization Solutions<br>Specializing in pharmaceutical, healthcare, and financial industries</p>
@@ -55,32 +53,32 @@
             <h2 class="section-title">Our Services</h2>
             <p class="section-subtitle">Comprehensive solutions tailored to your industry needs</p>
             <div class="services-grid">
-                <div class="service-card">
+                <div class="service-card" data-service="operations-optimization">
                     <div class="service-icon">📊</div>
                     <h3>Operations Optimization</h3>
                     <p>Streamline your operations with data-driven optimization strategies that reduce costs, improve efficiency, and enhance productivity across all business functions.</p>
                 </div>
-                <div class="service-card">
+                <div class="service-card" data-service="data-analytics">
                     <div class="service-icon">🔬</div>
                     <h3>Data Analytics</h3>
                     <p>Leverage advanced analytics to uncover insights, predict trends, and make informed decisions that drive business growth and competitive advantage.</p>
                 </div>
-                <div class="service-card">
+                <div class="service-card" data-service="pharmaceutical-solutions">
                     <div class="service-icon">💊</div>
                     <h3>Pharmaceutical Solutions</h3>
                     <p>Specialized analytics for supply chain optimization, clinical trial efficiency, regulatory compliance, and pharmaceutical operations management.</p>
                 </div>
-                <div class="service-card">
+                <div class="service-card" data-service="healthcare-analytics">
                     <div class="service-icon">🏥</div>
                     <h3>Healthcare Analytics</h3>
                     <p>Optimize hospital operations, patient flow, resource allocation, and healthcare delivery systems to improve patient outcomes and operational efficiency.</p>
                 </div>
-                <div class="service-card">
+                <div class="service-card" data-service="financial-analytics">
                     <div class="service-icon">💰</div>
                     <h3>Financial Analytics</h3>
                     <p>Risk assessment, portfolio optimization, fraud detection, and financial modeling solutions to enhance decision-making and regulatory compliance.</p>
                 </div>
-                <div class="service-card">
+                <div class="service-card" data-service="consulting-strategy">
                     <div class="service-icon">📈</div>
                     <h3>Consulting & Strategy</h3>
                     <p>Expert consulting services to help organizations develop and implement data-driven strategies aligned with their business objectives.</p>
@@ -181,8 +179,7 @@
                     <div class="contact-item">
                         <strong>Email:</strong>
                         <p>
-                            <a href="mailto:aramudhin@gmail.com">aramudhin@gmail.com</a><br>
-                            <a href="mailto:kishanguptab@gmail.com">kishanguptab@gmail.com</a>
+                            <a href="mailto:aramudhin@gmail.com">aramudhin@gmail.com</a>
                         </p>
                     </div>
                     <div class="contact-item">
@@ -190,7 +187,7 @@
                         <p><a href="https://www.linkedin.com/in/amar-ramudhin-356bb22/" target="_blank" rel="noopener noreferrer">Connect with Dr. Amar Ramudhin</a></p>
                     </div>
                 </div>
-                <form class="contact-form" id="contactForm" action="mailto:aramudhin@gmail.com,kishanguptab@gmail.com" method="POST" enctype="text/plain">
+                <form class="contact-form" id="contactForm">
                     <div class="form-group">
                         <label for="name">Name *</label>
                         <input type="text" id="name" name="name" required>
@@ -236,6 +233,14 @@
             </div>
         </div>
     </footer>
+
+    <!-- Service Detail Modal -->
+    <div id="serviceModal" class="service-modal">
+        <div class="service-modal-content">
+            <span class="service-modal-close">&times;</span>
+            <div id="serviceModalBody"></div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
